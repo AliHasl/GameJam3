@@ -33,11 +33,22 @@ public class BoardManager : MonoBehaviour {
 
     private int roomCount = 0;
 
-    private enum Direction {NORTH, SOUTH, EAST, WEST }
+    private int previousDir = -1;
 
+    private int spaceX = 0; int spaceZ = 0;
+
+    private enum Direction {NORTH, EAST, SOUTH, WEST }
+
+    private bool[][] spaceMap;
 
 	// Use this for initialization
 	void Start () {
+
+        spaceMap = new bool[50][];
+        for(int i = 0; i < 50; i++)
+        {
+            spaceMap[i] = new bool[50];
+        }
 
         
 
@@ -45,8 +56,7 @@ public class BoardManager : MonoBehaviour {
         IntRange roomRange = new IntRange(minRooms, maxRooms);
         numRooms = roomRange.Random;
 
-
-        //SetUpTilesArray();
+        
         tempRooms = new GameObject[numRooms];
         CreateRoomsAndCorridors(new Vector3(0,0,0));
         
@@ -69,74 +79,172 @@ public class BoardManager : MonoBehaviour {
         }
     }
 
-    void CreateRoomsAndCorridors(Vector3 position)
+    void CreateRoomsAndCorridors(Vector3 pos)
     {
         
-        
-        
-        //tempRooms.Add(Instantiate(roomPrefabs[0]));
 
-        //numCorridors = roomPrefabs.Length - 1;
-
-        //numRooms--;
 
         if (roomCount < numRooms)
         {
-            GameObject newRoom = Instantiate(roomPrefabs[0], position, Quaternion.identity);
+            GameObject newRoom = Instantiate(roomPrefabs[0],new Vector3(0,0,0), Quaternion.identity);
+            
+          
             tempRooms[roomCount] = newRoom;
+            
             int dir = Random.Range(0, 4);
-            CreateCorridor((Direction)dir);
+            if (previousDir == -1)
+            {
+                spaceX = 25;
+                spaceZ = 25;
+                spaceMap[spaceX][spaceZ] = true;
+            }
+            else
+            {
+
+
+                bool blocked = true;
+                int attempts = 0;
+                while (blocked) {
+                    switch (dir)
+                    {
+                        case 0:
+                            if (spaceMap[spaceX][spaceZ + 1] == true)
+                            {
+                                dir++;
+                                attempts++;
+                               
+                            }
+                            else
+                            {
+                                spaceMap[spaceX][spaceZ + 1] = true;
+                                spaceZ++;
+                                blocked = false;
+
+                            }
+                            break;
+                        case 1:
+                            if (spaceMap[spaceX + 1][spaceZ] == true)
+                            {
+                                dir++;
+                                attempts++;
+                            }
+                            else
+                            {
+                                spaceMap[spaceX + 1][spaceZ] = true;
+                                spaceX++;
+                                blocked = false;
+                            }
+                            break;
+                        case 2:
+                            if (spaceMap[spaceX][spaceZ - 1] == true)
+                            {
+                                dir++;
+                                attempts++;
+                            }
+                            else
+                            {
+                                spaceMap[spaceX][spaceZ - 1] = true;
+                                spaceZ--;
+                                blocked = false;
+                            }
+                            break;
+                        case 3:
+                            if (spaceMap[spaceX - 1][spaceZ] == true)
+                            {
+                                dir = 0;
+                                attempts++;
+                            }
+                            else
+                            {
+                                spaceMap[spaceX - 1][spaceZ] = true;
+                                spaceX--;
+                                blocked = false;
+                            }
+                            break;
+                    }
+                    if(attempts > 4)
+                    {
+                        roomCount = numRooms;
+                        break;
+                    }
+                }
+                newRoom.transform.position = pos += newRoom.transform.GetChild(previousDir).transform.position;
+            }
+           
+
+
+            CreateCorridor((Direction)dir, (Direction)previousDir);
             Debug.Log(dir);
         }
 
-
-        
-        //corridors[0] = new Corridor();
     }
 
-    void CreateCorridor(Direction dir)
-    {
+  
 
+    void CreateCorridor(Direction dir, Direction prev)
+    {
+        
         Vector3 newRoomLocation = new Vector3();
 
-        if (dir == Direction.NORTH)
-        {
-            for (int length = 0; length < corridorLength.Random; length++)
-            {
-                Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(0).transform.position + new Vector3(0, 0, length), Quaternion.identity);
-                newRoomLocation = tempRooms[roomCount].transform.GetChild(0).transform.position + new Vector3(0, 0, length);
-            }
-            
-        }
 
-        else if (dir == Direction.EAST)
+        if ((int)prev != -1)
         {
-            for (int length = 0; length < corridorLength.Random; length++)
+            while((int)dir == (int)prev)
             {
-                Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(1).transform.position - new Vector3(length, 0, 0), Quaternion.identity);
-                newRoomLocation = tempRooms[roomCount].transform.GetChild(1).transform.position - new Vector3(length, 0, 0);
-            }
-
-        }
-
-        else if (dir == Direction.SOUTH)
-        {
-            for (int length = 0; length < corridorLength.Random; length++)
-            {
-                Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(2).transform.position - new Vector3(0, 0, length), Quaternion.identity);
-                newRoomLocation = tempRooms[roomCount].transform.GetChild(2).transform.position - new Vector3(0, 0, length);
+                dir = (Direction)Random.Range(0, 4);
             }
         }
 
-        else if (dir == Direction.WEST)
-        {
-            for (int length = 0; length < corridorLength.Random; length++)
+        
+            if (dir == Direction.NORTH)
             {
-                Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(3).transform.position + new Vector3(length, 0, 0), Quaternion.identity);
-                newRoomLocation = tempRooms[roomCount].transform.GetChild(3).transform.position + new Vector3(length, 0, 0);
+                for (int length = 0; length < corridorLength.Random; length++)
+                {
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(0).transform.position + new Vector3(0, 0, length), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.GetChild(0).transform.position + new Vector3(0, 0, length);
+                }
+            previousDir = (int)Direction.SOUTH;
+            Debug.Log("Road " + roomCount + " Built NORTH");
             }
+
+            else if (dir == Direction.EAST)
+            {
+                for (int length = 0; length < corridorLength.Random; length++)
+                {
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(1).transform.position + new Vector3(length, 0, 0), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.GetChild(1).transform.position + new Vector3(length, 0, 0);
+                }
+            previousDir = (int)Direction.WEST;
+            Debug.Log("Road " + roomCount + " Built EAST");
         }
+
+            else if (dir == Direction.SOUTH)
+            {
+                for (int length = 0; length < corridorLength.Random; length++)
+                {
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(2).transform.position - new Vector3(0, 0, length), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.GetChild(2).transform.position - new Vector3(0, 0, length);
+                }
+            previousDir = (int)Direction.NORTH;
+            Debug.Log("Road " + roomCount + " Built SOUTH");
+        }
+
+            else if (dir == Direction.WEST)
+            {
+                for (int length = 0; length < corridorLength.Random; length++)
+                {
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(3).transform.position - new Vector3(length, 0, 0), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.GetChild(3).transform.position - new Vector3(length, 0, 0);
+                }
+            previousDir = (int)Direction.EAST;
+            Debug.Log("Road " + roomCount + " Built WEST");
+        }
+        
+
+        //previousDir =((int)dir + 2) % 4;
         roomCount++;
+        Direction previous = (Direction)previousDir;
+        Debug.Log("My Direction is " + dir + " My Previous direction is " + previous);
         CreateRoomsAndCorridors(newRoomLocation);
 
     }

@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 10
   rows: 10
-  maxRooms: 2
-  minRooms: 2
+  maxRooms: 10
+  minRooms: 4
   minCorridorLength: 20
   maxCorridorLength: 24
   floorTiles:
