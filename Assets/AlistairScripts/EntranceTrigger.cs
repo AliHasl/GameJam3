@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EntranceTrigger : MonoBehaviour {
 
+    bool playerInRoom = false;
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +23,10 @@ public class EntranceTrigger : MonoBehaviour {
         {
             return;
         }
-
-        gameObject.transform.parent.Find("Gates").GetComponentInChildren<GateMechanism>();
+        if (playerInRoom == false)
+        {
+            gameObject.transform.parent.Find("Gates").GetComponentInChildren<GateMechanism>().ShutGates();
+            playerInRoom = true;
+        }
     }
 }

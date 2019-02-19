@@ -24,11 +24,15 @@ public class GateMechanism : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (gateShut)
         {
-            while (gameObject.transform.position.y < closePosition.y)
+            if (gameObject.transform.position.y < closePosition.y)
                 m_rigidBody.AddForce(Vector3.up);
+            else
+            {
+                m_rigidBody.velocity = Vector3.zero;
+            }
         }
 	}
 
