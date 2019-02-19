@@ -86,7 +86,8 @@ public class BoardManager : MonoBehaviour {
 
         if (roomCount < numRooms)
         {
-            GameObject newRoom = Instantiate(roomPrefabs[0],new Vector3(0,0,0), Quaternion.identity);
+            int randomRoom = Random.Range(0, roomPrefabs.Length);
+            GameObject newRoom = Instantiate(roomPrefabs[randomRoom],new Vector3(0,0,0), Quaternion.identity);
             
           
             tempRooms[roomCount] = newRoom;
@@ -170,11 +171,12 @@ public class BoardManager : MonoBehaviour {
                 }
                 newRoom.transform.position = pos -= newRoom.transform.Find("Exits").GetChild(previousDir).transform.position;
             }
-           
 
-
+            //Sets the exit direction for the room gate controls.
+            newRoom.GetComponent<Room>().exit = dir;
+            Debug.Log("YO This is the Dir " + dir);
             CreateCorridor((Direction)dir, (Direction)previousDir);
-            Debug.Log(dir);
+            
         }
 
     }

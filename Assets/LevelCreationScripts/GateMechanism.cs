@@ -5,11 +5,11 @@ using UnityEngine;
 public class GateMechanism : MonoBehaviour {
 
     public bool gateShut = false;
-    
+    public bool lowerGate = false;
 
     Rigidbody m_rigidBody;
 
-    Vector3 closePosition;
+    Vector3 closePosition, openPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,7 @@ public class GateMechanism : MonoBehaviour {
         m_rigidBody = gameObject.GetComponent<Rigidbody>();
 
         closePosition = gameObject.transform.position + new Vector3(0, 1, 0);
+        openPosition = gameObject.transform.position;
     }
 	
 	// Update is called once per frame
@@ -32,9 +33,30 @@ public class GateMechanism : MonoBehaviour {
             else
             {
                 m_rigidBody.velocity = Vector3.zero;
+                gateShut = false;
             }
         }
+
+        if (lowerGate)
+        {
+            if (gameObject.transform.position.y > openPosition.y)
+                m_rigidBody.AddForce(Vector3.down);
+            else
+            {
+                m_rigidBody.velocity = Vector3.zero;
+                lowerGate = false;
+            }
+        }
+
 	}
+
+
+    
+
+    public void LowerGate()
+    {
+        lowerGate = true;
+    }
 
     public void ShutGates()
     {

@@ -5,12 +5,13 @@ using UnityEngine;
 public class EntranceTrigger : MonoBehaviour {
 
     bool playerInRoom = false;
-
+    GateMechanism[] roomGates;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+       roomGates = transform.parent.parent.Find("Gates").GetComponentsInChildren<GateMechanism>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +26,14 @@ public class EntranceTrigger : MonoBehaviour {
         }
         if (playerInRoom == false)
         {
-            gameObject.transform.parent.Find("Gates").GetComponentInChildren<GateMechanism>().ShutGates();
+            //transform.parent.parent.Find("Gates").GetComponentInChildren<GateMechanism>().ShutGates() ;
+            foreach(GateMechanism g in roomGates)
+            {
+                g.ShutGates();
+            }
+
+            transform.parent.parent.GetComponent<SpawnMonsters>().CreateCreatures();
+
             playerInRoom = true;
         }
     }

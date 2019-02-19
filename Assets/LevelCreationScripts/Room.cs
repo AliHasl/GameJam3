@@ -12,6 +12,17 @@ public class Room : MonoBehaviour {
 
     private int exitCount;
 
+    public int exit;
+
+
+
+    public bool testExit = false;
+
+public void setExit(int ex)
+    {
+        exit = ex;
+    }
+
     BoardManager myBoard;
 
     public void InitialiseRoom(int x, int z)
@@ -34,14 +45,24 @@ public class Room : MonoBehaviour {
 
     }
 
+    public void OpenExit()
+    {
+        transform.Find("Gates").GetChild(exit).GetComponent<GateMechanism>().LowerGate();
+    }
+
+
     // Use this for initialization
     void Start() {
         //InitialiseRoom((int) transform.position.x, (int) transform.position.z);
-
+        //exit = -1;
 }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (testExit)
+        {
+            OpenExit();
+            testExit = false;
+        }
 	}
 }
