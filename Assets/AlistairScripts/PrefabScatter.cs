@@ -11,50 +11,64 @@ public class PrefabScatter : MonoBehaviour {
     private float zSize = 10.0f;
     public Vector3 centrePoint;
     public GameObject prefab;
+    public int minObjects = 0;
     public int maxObjects;
-    private int currentObjects;
+    private int objectsToPlace;
+    private int currentObjects = 0;
+
+    public ScatterPrefabConfig[] prefabs;
+
+    public Transform[] SpawnLocations;
 
 
 
-	// Use this for initialization
-	public virtual void Start () {
+    // Use this for initialization
+    public virtual void Start() {
+        
 
-        //if(centrePoint == null)
-        //{
-            centrePoint = transform.position;
-        //}
+        centrePoint = transform.position;
+
 
         xSize = width;
         zSize = length;
+        List<int> uniqueSpawnPoints = new List<int>();
+        objectsToPlace = Random.Range(minObjects, maxObjects);
 
-		if(currentObjects <= maxObjects)
-        {
-            xSize = Random.Range(xSize, -xSize);
-            zSize = Random.Range(zSize, -zSize);
-            float posX = Random.Range(centrePoint.x, centrePoint.x + xSize);
-            float posZ = Random.Range(centrePoint.z, centrePoint.z + zSize);
-            GameObject spawnedObject = Instantiate(prefab, new Vector3(posX, 0.0f, posZ), Quaternion.identity);
-            currentObjects++;
+        while (uniqueSpawnPoints.Count < objectsToPlace){
+            int numberToAdd = Random.Range(0, 9);
+            while (uniqueSpawnPoints.Contains(numberToAdd))
+            {
+                numberToAdd = Random.Range(0, 9);
+            }
+            uniqueSpawnPoints.Add(numberToAdd);
         }
 
-        
-	}
+    
+        foreach(int i in uniqueSpawnPoints)
+        {
+            GameObject spawnedObject = Instantiate(prefabs[0].objectToCreate, SpawnLocations[i].position, Quaternion.identity);
+        }
+            
+       
 
-   public virtual void Update()
+    }
+
+    public virtual void Update()
     {
         if (Application.isEditor)
         {
-            Debug.DrawLine(transform.position + new Vector3(-width, 1 ,length), transform.position + new Vector3(width, 1, length));
-            Debug.DrawLine(transform.position + new Vector3(width, 1, length), transform.position + new Vector3(width, 1, -length));
-            Debug.DrawLine(transform.position + new Vector3(width, 1, -length), transform.position + new Vector3(-width, 1, -length));
-            Debug.DrawLine(transform.position + new Vector3(-width, 1, -length), transform.position + new Vector3(-width, 1, length));
+            Debug.DrawLine(transform.position + new Vector3(-width, 2, length), transform.position + new Vector3(width, 2, length));
+            Debug.DrawLine(transform.position + new Vector3(width, 2, length), transform.position + new Vector3(width, 2, -length));
+            Debug.DrawLine(transform.position + new Vector3(width, 2, -length), transform.position + new Vector3(-width, 2, -length));
+            Debug.DrawLine(transform.position + new Vector3(-width, 2, -length), transform.position + new Vector3(-width, 2, length));
         }
     }
 
-
+}
     [System.Serializable]
     public class ScatterPrefabConfig
     {
-
+        public GameObject objectToCreate;
+        public float offset;
     }
-}
+

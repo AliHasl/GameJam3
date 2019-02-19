@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370791487216952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0966063, y: 0.19401073, z: -0.8479805}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 10
   rows: 10
-  maxRooms: 10
-  minRooms: 4
+  maxRooms: 100
+  minRooms: 50
   minCorridorLength: 20
   maxCorridorLength: 24
   floorTiles:
@@ -63,6 +63,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   roomPrefabs:
-  - {fileID: 1852499208950158, guid: 5053790b4a3f64b4f851f0a334a768b9, type: 2}
+  - {fileID: 1361650672955142, guid: 3f7349ce20f686343b12fa6d0da3b802, type: 2}
   numRooms: 2
   corridorLength: {fileID: 0}

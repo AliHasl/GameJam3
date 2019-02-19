@@ -168,7 +168,7 @@ public class BoardManager : MonoBehaviour {
                         break;
                     }
                 }
-                newRoom.transform.position = pos += newRoom.transform.GetChild(previousDir).transform.position;
+                newRoom.transform.position = pos -= newRoom.transform.Find("Exits").GetChild(previousDir).transform.position;
             }
            
 
@@ -200,8 +200,8 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(0).transform.position + new Vector3(0, 0, length), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.GetChild(0).transform.position + new Vector3(0, 0, length);
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, length), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, length);
                 }
             previousDir = (int)Direction.SOUTH;
             Debug.Log("Road " + roomCount + " Built NORTH");
@@ -211,8 +211,8 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(1).transform.position + new Vector3(length, 0, 0), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.GetChild(1).transform.position + new Vector3(length, 0, 0);
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0);
                 }
             previousDir = (int)Direction.WEST;
             Debug.Log("Road " + roomCount + " Built EAST");
@@ -222,8 +222,8 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(2).transform.position - new Vector3(0, 0, length), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.GetChild(2).transform.position - new Vector3(0, 0, length);
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length);
                 }
             previousDir = (int)Direction.NORTH;
             Debug.Log("Road " + roomCount + " Built SOUTH");
@@ -233,8 +233,8 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.GetChild(3).transform.position - new Vector3(length, 0, 0), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.GetChild(3).transform.position - new Vector3(length, 0, 0);
+                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0), Quaternion.identity);
+                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0);
                 }
             previousDir = (int)Direction.EAST;
             Debug.Log("Road " + roomCount + " Built WEST");
