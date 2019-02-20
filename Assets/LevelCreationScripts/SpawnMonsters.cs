@@ -16,6 +16,6 @@ public class SpawnMonsters : PrefabScatter {
 
     public void CreateCreatures()
     {
-        base.Spawn();
+         base.Spawn();
     }
 }

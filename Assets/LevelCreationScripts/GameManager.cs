@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
     public GameObject playerObject = null;
+    public GameObject boardManager = null;
+
+    public GameObject getPlayerObject() {
+        return playerObject;
+    }
 
     private void Awake()
     {
@@ -13,12 +18,31 @@ public class GameManager : MonoBehaviour {
         {
             instance = this;
         }
+
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        
+
     }
 
 
     // Use this for initialization
     void Start () {
-		
+		if(playerObject != null)
+        {
+            Instantiate(playerObject, Vector3.up, Quaternion.identity);
+        }
+
+        if(GameObject.Find("BoardManager") == null)
+        {
+            GameObject bManager = Instantiate(boardManager);
+            bManager.name = "BoardManager";
+
+        }
 	}
 	
 	// Update is called once per frame
