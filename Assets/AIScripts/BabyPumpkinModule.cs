@@ -12,19 +12,17 @@ public class BabyPumpkinModule : MonoBehaviour {
  **/
 
 
-    enum PumpkinStates
-    {
-        FIND_MINE_PLACE,
-        PLANT,
-        EXPLODE
-    };
+
+
+
 
     private BaseAIScript baseAIScript;
-
+    private float timer = 5;
 
     private void Awake()
     {
         baseAIScript = GetComponent<BaseAIScript>();
+        baseAIScript.states = BaseAIScript.States.MOVE_AI_NAVMESH;
 
     }
 
@@ -34,6 +32,16 @@ public class BabyPumpkinModule : MonoBehaviour {
 
     private void Update()
     {
-        
+        if(timer < 0)
+        {
+            baseAIScript.states = BaseAIScript.States.FIND_PLAYER;
+            
+        }
+        if(timer < -3)
+        {
+            //ShootStuffHere
+            print("Shooting");
+        }
+        timer -= Time.deltaTime;
     }
 }

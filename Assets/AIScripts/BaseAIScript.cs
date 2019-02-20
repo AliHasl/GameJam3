@@ -26,16 +26,18 @@ public class BaseAIScript : MonoBehaviour {
 
     public Vector3 playerLocation;
     [SerializeField]
-    private float speed;
+    private float speed, maxSpeed;
     private NavMeshAgent agent;
 
     private Animator anim;
     private GameObject player;
 
+    public float Health;
     public Vector3 MoveToLocation;
 
     private void Awake()
     {
+        gameObject.AddComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -65,8 +67,27 @@ public class BaseAIScript : MonoBehaviour {
                 break;
 
         }
+
+        if(speed < maxSpeed)
+        {
+            speed += Time.deltaTime / 2;
+        }
+        if(speed < 0)
+        {
+            speed = 0;
+        }
+
+        if(Health < 0)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
+    public void slowDown(float amount)
+    {
+        speed -= amount;
+    }
 
 
 
@@ -87,4 +108,9 @@ public class BaseAIScript : MonoBehaviour {
        // finalPosition += transform.position;
         return finalPosition;
     }
+
+
+   
+
+
 }
