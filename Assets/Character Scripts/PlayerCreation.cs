@@ -45,7 +45,7 @@ public class PlayerCreation : MonoBehaviour {
 
 
     // Use this for initialization
-    void LoadCharacter(CharacterTypes CharacterName)
+    public void LoadCharacter(CharacterTypes CharacterName)
     {
         //playerController = new PlayerController();
 
@@ -84,6 +84,9 @@ public class PlayerCreation : MonoBehaviour {
         // GameObject Player = InitializeCharacter();
 
         Destroy(canvas);
+
+        GameManager.instance.SetPlayerObject();
+
         Destroy(gameObject);
     }
 

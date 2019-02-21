@@ -14,9 +14,17 @@ public class Room : MonoBehaviour {
 
     public int exit;
 
+    public bool playerInRoom { get; private set; }
+
 
 
     public bool testExit = false;
+
+
+    public void setPlayerInRoom(bool TF)
+    {
+        playerInRoom = TF;
+    }
 
 public void setExit(int ex)
     {
@@ -30,6 +38,7 @@ public void setExit(int ex)
         exitCount = transform.childCount;
         xPos = x;
         zPos = z;
+        playerInRoom = false;
 
         myBoard = GameObject.Find("BoardManager").GetComponent<BoardManager>();
 

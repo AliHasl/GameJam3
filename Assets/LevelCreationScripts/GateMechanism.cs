@@ -50,8 +50,15 @@ public class GateMechanism : MonoBehaviour {
 
 	}
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Room")
+        {
+            Physics.IgnoreCollision(GetComponent<BoxCollider>(), collision.gameObject.GetComponent<BoxCollider>());
+        }
+       
+    }
 
-    
 
     public void LowerGate()
     {

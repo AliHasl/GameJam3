@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 
     public void BuildCharacter(int health, float speed, string characterName, GameObject startWand)
     {
-        
+        gameObject.tag = "Player";
         anim = GetComponent<Animator>();
         transform.position = new Vector3(0, 0, 0);
         MaxHealth = health;
