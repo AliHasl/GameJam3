@@ -11,6 +11,7 @@ public class PumpkinBoss : MonoBehaviour {
 
     private bool SpecialPlaying = false;
     private bool CurrentlyAttack = false;
+    private Animator anim;
 
 
     private PumpkinStates lastState;
@@ -30,6 +31,7 @@ public class PumpkinBoss : MonoBehaviour {
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         baseAIScript = GetComponent<BaseAIScript>();
         StartCoroutine("basicBrain");
         lastState = PumpkinStates.BASIC_ATTACK;
@@ -37,6 +39,8 @@ public class PumpkinBoss : MonoBehaviour {
 
     IEnumerator CircleAttack()
     {
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsRandomAttack", true);
         for (int x = 0; x < 20; x++)
         {
             for (float i = 0; i < 1; i += .05f)
@@ -70,7 +74,10 @@ public class PumpkinBoss : MonoBehaviour {
             }
             yield return new WaitForSeconds(.25f);
         }
+        anim.SetBool("IsRunning", true);
+        anim.SetBool("IsRandomAttack", false);
         SpecialPlaying = false;
+        CurrentlyAttack = false;
         StartCoroutine("basicBrain");
     }
 
@@ -78,7 +85,9 @@ public class PumpkinBoss : MonoBehaviour {
 
     IEnumerator RandomBullets()
     {
-        for(int i = 0; i < 1200; i++)
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsScatterAttack", true);
+        for (int i = 0; i < 1200; i++)
         {
             //Quaternion qua = new Quaternion(0, Random.Range(0,360), 0, 0);
             GameObject bull = Instantiate(bullet, transform.position, Quaternion.Euler(0, Random.Range(0, 360), 0));
@@ -89,12 +98,16 @@ public class PumpkinBoss : MonoBehaviour {
         }
         SpecialPlaying = false;
         StartCoroutine("basicBrain");
+        CurrentlyAttack = false;
+        anim.SetBool("IsScatterAttack", false);
+        anim.SetBool("IsRunning", true);
     }
 
 
     IEnumerator SinBullets()
     {
-
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsSpiralAttack", true);
         for (int q = 0; q < 6; q++)
         {
             for (float x = 0; x < 1f; x += .05f)
@@ -160,6 +173,8 @@ public class PumpkinBoss : MonoBehaviour {
 
             //yield return new WaitForSeconds(.1f);
         }
+        anim.SetBool("IsSpiralAttack", false);
+        anim.SetBool("IsRunning", true);
         CurrentlyAttack = false;
 
     }
@@ -168,16 +183,28 @@ public class PumpkinBoss : MonoBehaviour {
 
     IEnumerator SpawnMineEnemies()
     {
-        for(int i = 0; i < 5; i++)
-        {
+        anim.SetBool("IsRunning", true);
+        for (int i = 0; i < 5; i++)
+        {         
+            yield return new WaitForSeconds(4f);
+            anim.SetBool("IsRunning", false);
+            anim.SetBool("IsMineAttack", true);
+            baseAIScript.states = BaseAIScript.States.FIND_PLAYER;
+            yield return new WaitForSeconds(1f);
             Instantiate(mineEnemy, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(.75f);
+            yield return new WaitForSeconds(1f);
+            baseAIScript.states = BaseAIScript.States.MOVE_AI_NAVMESH;
+            anim.SetBool("IsMineAttack", false);
+            anim.SetBool("IsRunning", true);
+
         }
         CurrentlyAttack = false;
     }
 
     IEnumerator BasicAttack()
     {
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsSpiralAttack", true);
         for (int i = 0; i < 100; i++)
         {
             Vector3 pos = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
@@ -185,6 +212,8 @@ public class PumpkinBoss : MonoBehaviour {
             bull.GetComponent<Rigidbody>().AddForce(pos.normalized * 300);
             yield return new WaitForSeconds(.3f);
         }
+        anim.SetBool("IsSpiralAttack", false);
+        anim.SetBool("IsRunning", true);
         CurrentlyAttack = false;
 
     }
@@ -194,7 +223,7 @@ public class PumpkinBoss : MonoBehaviour {
     IEnumerator basicBrain()
     {
         baseAIScript.states = BaseAIScript.States.MOVE_AI_NAVMESH;
-
+        anim.SetBool("IsRunning", true);
         if (!CurrentlyAttack)
         {
             //print("BoolWorks");
@@ -236,7 +265,7 @@ public class PumpkinBoss : MonoBehaviour {
         //Random at 30% and 10%
         //3% let it all out
 
-        if ((baseAIScript.Health/baseAIScript.maxHealth*100)%20 == 0 && !SpecialPlaying && baseAIScript.maxHealth !=baseAIScript.Health )
+        if ((baseAIScript.Health/baseAIScript.maxHealth*100)%20 < 5 && !SpecialPlaying && baseAIScript.maxHealth !=baseAIScript.Health )
         {
             StopAllCoroutines();
             baseAIScript.states = BaseAIScript.States.FIND_PLAYER;
@@ -253,7 +282,7 @@ public class PumpkinBoss : MonoBehaviour {
         }
 
 
-        if ((baseAIScript.Health / baseAIScript.maxHealth * 100) == 5 &&!SpecialPlaying)
+        if ((baseAIScript.Health / baseAIScript.maxHealth * 100) < 3 &&!SpecialPlaying)
         {
             StopAllCoroutines();
             baseAIScript.states = BaseAIScript.States.FIND_PLAYER;
@@ -267,6 +296,8 @@ public class PumpkinBoss : MonoBehaviour {
             StartCoroutine("basicBrain");
         }
 
+
+        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
 
     }
 

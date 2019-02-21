@@ -12,6 +12,7 @@ TagManager:
   - Wand
   - Room
   - Chest
+  - Bullet
   layers:
   - Default
   - TransparentFX
