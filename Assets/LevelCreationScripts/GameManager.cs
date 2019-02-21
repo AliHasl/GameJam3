@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     private GameObject playerObject;
 
+    [SerializeField]
     Vector3 offset;
 
     public GameObject getPlayerObject() {
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour {
         
    
 
-        offset = new Vector3(0, 10, 0);
+        offset = new Vector3(0, 30, 0);
 
         m_camera = Camera.main;
         

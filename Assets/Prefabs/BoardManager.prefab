@@ -58,11 +58,12 @@ MonoBehaviour:
   minCorridorLength: 10
   maxCorridorLength: 24
   floorTiles:
-  - {fileID: 1575449790363430, guid: 0f6834ded71b6f644ba81d3c67727999, type: 2}
+  - {fileID: 1461903270783638, guid: ef59c818354779c4b8e2dab046631c2f, type: 2}
   tempRooms: []
   roomPrefabs:
   - {fileID: 1361650672955142, guid: 3f7349ce20f686343b12fa6d0da3b802, type: 2}
   - {fileID: 1059270816087186, guid: 8794b5f100ac26d4fad9b5470707af5e, type: 2}
   - {fileID: 1312698695829154, guid: 959d5a35b1d6d114bb5fdfd576d38141, type: 2}
+  corridorZSize: 10
   numRooms: 2
   corridorLength: {fileID: 0}

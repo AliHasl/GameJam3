@@ -1,22 +1,33 @@
 fileFormatVersion: 2
-guid: 8753cfddbc08633459c38dde17ba269e
-timeCreated: 1550612475
+guid: c7fe17b4fe8c06f439bd576700e8d56b
+timeCreated: 1550778473
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: New - Modular Floor127
+    100004: New - Modular Wall050
+    100006: New - Modular Wall051
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Wall012
-    9500000: //RootNode
+    400002: New - Modular Floor127
+    400004: New - Modular Wall050
+    400006: New - Modular Wall051
+    2300000: New - Modular Floor127
+    2300002: New - Modular Wall050
+    2300004: New - Modular Wall051
+    3300000: New - Modular Floor127
+    3300002: New - Modular Wall050
+    3300004: New - Modular Wall051
+    4300000: New - Modular Floor127
+    4300002: New - Modular Wall050
+    4300004: New - Modular Wall051
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 8f8661451dabdb648a189229ed68c546, type: 2}
+      name: Wyatt_Ver2_Mesh_default
+    second: {fileID: 2100000, guid: ad088dfae45cb8b4d91af10d6ab97fd7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -88,7 +99,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

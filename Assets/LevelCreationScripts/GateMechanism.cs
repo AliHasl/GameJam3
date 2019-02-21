@@ -20,7 +20,7 @@ public class GateMechanism : MonoBehaviour {
 
         m_rigidBody = gameObject.GetComponent<Rigidbody>();
 
-        closePosition = gameObject.transform.position + new Vector3(0, 1, 0);
+        closePosition = gameObject.transform.position + new Vector3(0, 3, 0);
         openPosition = gameObject.transform.position;
     }
 	
@@ -54,7 +54,7 @@ public class GateMechanism : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Room")
         {
-            Physics.IgnoreCollision(GetComponent<BoxCollider>(), collision.gameObject.GetComponent<BoxCollider>());
+            Physics.IgnoreCollision(GetComponent<Collider>(), collision.gameObject.GetComponent<BoxCollider>());
         }
        
     }
