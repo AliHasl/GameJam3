@@ -11,6 +11,7 @@ TagManager:
   - WandPosition
   - Wand
   - Room
+  - Chest
   layers:
   - Default
   - TransparentFX

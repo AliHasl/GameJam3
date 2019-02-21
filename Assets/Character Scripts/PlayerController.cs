@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour {
     private float Speed;
     private Rigidbody rigidBody;
     private Animator anim;
-   
+    [Range(0,5)]
+    public int manaPool = 0;
 
     private float reloadCounter = 0;
     [SerializeField]
@@ -65,8 +66,8 @@ public class PlayerController : MonoBehaviour {
         Speed = speed;
         CharacterName = characterName;
         rigidBody = GetComponent<Rigidbody>();
-        rigidBody.useGravity = false;
-        rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
+        rigidBody.useGravity = true;
+        rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;// | RigidbodyConstraints.FreezePositionY;
         characterBuilt = true;
         lookAtObject = GameObject.FindGameObjectWithTag("lookAtObject").transform;
         HandLocation = GameObject.FindGameObjectWithTag("HandLocation").transform;
@@ -271,6 +272,20 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "Wand")
         {
             print("WandHere");
+        }
+
+        if(other.gameObject.tag == "Enemy" && invinceFrames != 0)
+        {
+            if(other.gameObject.GetComponent<BaseAIScript>().Health == other.gameObject.GetComponent<BaseAIScript>().maxHealth / 10)
+            {
+                Destroy(other.gameObject);
+                manaPool++;
+            }
+        }
+
+        if(other.gameObject.tag == "Chest" && manaPool == 5 && Input.GetKeyDown(KeyCode.Joystick1Button0))
+        {
+            other.gameObject.GetComponent<ChestScript>().OpenChest();
         }
     }
 
