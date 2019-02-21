@@ -46,7 +46,15 @@ public class PrefabScatter : MonoBehaviour {
         foreach (int i in uniqueSpawnPoints)
         {
             GameObject spawnedObject = Instantiate(prefab[0], SpawnLocations[i].position, Quaternion.identity);
-            spawnedObject.transform.SetParent(transform);
+            if (spawnedObject.tag == "Enemy")
+            {
+                spawnedObject.transform.SetParent(transform.Find("Monsters"));
+            }
+            else
+            {
+                spawnedObject.transform.SetParent(transform);
+            }
+            
         }
     }
 

@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: d683892f86ea671438dc92011f6ca3f3
-timeCreated: 1550486570
+timeCreated: 1550686244
 licenseType: Pro
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerObject: {instanceID: 0}
+  - boardManager: {fileID: 1370791487216952, guid: 6f252ba0c5c15074aaa8d798cebf3b63,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

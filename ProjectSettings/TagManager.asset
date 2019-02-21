@@ -10,6 +10,7 @@ TagManager:
   - lookAtObject
   - WandPosition
   - Wand
+  - Room
   layers:
   - Default
   - TransparentFX

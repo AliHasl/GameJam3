@@ -174,7 +174,6 @@ public class BoardManager : MonoBehaviour {
 
             //Sets the exit direction for the room gate controls.
             newRoom.GetComponent<Room>().exit = dir;
-            Debug.Log("YO This is the Dir " + dir);
             CreateCorridor((Direction)dir, (Direction)previousDir);
             
         }
@@ -206,7 +205,7 @@ public class BoardManager : MonoBehaviour {
                     newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, length);
                 }
             previousDir = (int)Direction.SOUTH;
-            Debug.Log("Road " + roomCount + " Built NORTH");
+            
             }
 
             else if (dir == Direction.EAST)
@@ -217,7 +216,7 @@ public class BoardManager : MonoBehaviour {
                     newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0);
                 }
             previousDir = (int)Direction.WEST;
-            Debug.Log("Road " + roomCount + " Built EAST");
+            
         }
 
             else if (dir == Direction.SOUTH)
@@ -228,7 +227,7 @@ public class BoardManager : MonoBehaviour {
                     newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length);
                 }
             previousDir = (int)Direction.NORTH;
-            Debug.Log("Road " + roomCount + " Built SOUTH");
+           
         }
 
             else if (dir == Direction.WEST)
@@ -239,14 +238,14 @@ public class BoardManager : MonoBehaviour {
                     newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0);
                 }
             previousDir = (int)Direction.EAST;
-            Debug.Log("Road " + roomCount + " Built WEST");
+            
         }
         
 
         //previousDir =((int)dir + 2) % 4;
         roomCount++;
         Direction previous = (Direction)previousDir;
-        Debug.Log("My Direction is " + dir + " My Previous direction is " + previous);
+        
         CreateRoomsAndCorridors(newRoomLocation);
 
     }

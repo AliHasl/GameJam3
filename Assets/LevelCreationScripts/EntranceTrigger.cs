@@ -6,11 +6,13 @@ public class EntranceTrigger : MonoBehaviour {
 
     bool playerInRoom = false;
     GateMechanism[] roomGates;
+    Room thisRoom;
+
 
 	// Use this for initialization
 	void Start () {
        roomGates = transform.parent.parent.Find("Gates").GetComponentsInChildren<GateMechanism>();
-
+        thisRoom = transform.parent.GetComponentInParent<Room>();
     }
 	
 	// Update is called once per frame
@@ -20,11 +22,11 @@ public class EntranceTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name != "Player")
+        if(other.tag != "Player")
         {
             return;
         }
-        if (playerInRoom == false)
+        if (thisRoom.playerInRoom == false)
         {
             //transform.parent.parent.Find("Gates").GetComponentInChildren<GateMechanism>().ShutGates() ;
             foreach(GateMechanism g in roomGates)
@@ -34,7 +36,7 @@ public class EntranceTrigger : MonoBehaviour {
 
             transform.parent.parent.GetComponent<SpawnMonsters>().CreateCreatures();
 
-            playerInRoom = true;
+            thisRoom.setPlayerInRoom(true);
         }
     }
 }
