@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public GameObject boardManager = null;
     private Camera m_camera;
     private PlayerCreation playerCreation;
-    public Canvas playerCreationScreen;
+    public Canvas playerHUD;
 
     private GameObject playerObject;
 
@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour {
         m_camera = Camera.main;
         
 
+    }
+
+    public void displayHUD()
+    {
+        Camera.main.transform.GetChild(1).GetComponent<Canvas>().enabled = true;
     }
 
 

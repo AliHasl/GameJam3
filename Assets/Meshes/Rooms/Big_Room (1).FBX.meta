@@ -1,0 +1,657 @@
+fileFormatVersion: 2
+guid: f305b4cdc749a1c4f976e3ddd220e036
+timeCreated: 1550764773
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: New - Modular Corner Wall005
+    100004: New - Modular Corner Wall006
+    100006: New - Modular Corner Wall007
+    100008: New - Modular Corner Wall008
+    100010: New - Modular Floor012
+    100012: New - Modular Floor013
+    100014: New - Modular Floor014
+    100016: New - Modular Floor015
+    100018: New - Modular Floor016
+    100020: New - Modular Floor017
+    100022: New - Modular Floor018
+    100024: New - Modular Floor019
+    100026: New - Modular Floor020
+    100028: New - Modular Floor021
+    100030: New - Modular Floor022
+    100032: New - Modular Floor023
+    100034: New - Modular Floor024
+    100036: New - Modular Floor025
+    100038: New - Modular Floor026
+    100040: New - Modular Floor027
+    100042: New - Modular Floor028
+    100044: New - Modular Floor029
+    100046: New - Modular Floor030
+    100048: New - Modular Floor031
+    100050: New - Modular Floor032
+    100052: New - Modular Floor033
+    100054: New - Modular Floor034
+    100056: New - Modular Floor035
+    100058: New - Modular Floor036
+    100060: New - Modular Floor037
+    100062: New - Modular Floor038
+    100064: New - Modular Floor039
+    100066: New - Modular Floor040
+    100068: New - Modular Floor041
+    100070: New - Modular Floor042
+    100072: New - Modular Floor043
+    100074: New - Modular Floor044
+    100076: New - Modular Floor045
+    100078: New - Modular Floor046
+    100080: New - Modular Floor047
+    100082: New - Modular Floor048
+    100084: New - Modular Floor049
+    100086: New - Modular Floor050
+    100088: New - Modular Floor051
+    100090: New - Modular Floor052
+    100092: New - Modular Floor053
+    100094: New - Modular Floor054
+    100096: New - Modular Floor055
+    100098: New - Modular Floor056
+    100100: New - Modular Floor057
+    100102: New - Modular Floor058
+    100104: New - Modular Floor059
+    100106: New - Modular Floor060
+    100108: New - Modular Floor061
+    100110: New - Modular Floor062
+    100112: New - Modular Floor063
+    100114: New - Modular Floor064
+    100116: New - Modular Floor065
+    100118: New - Modular Floor066
+    100120: New - Modular Floor067
+    100122: New - Modular Floor068
+    100124: New - Modular Floor069
+    100126: New - Modular Floor070
+    100128: New - Modular Floor071
+    100130: New - Modular Floor072
+    100132: New - Modular Floor073
+    100134: New - Modular Floor074
+    100136: New - Modular Floor075
+    100138: New - Modular Floor076
+    100140: New - Modular Floor077
+    100142: New - Modular Floor078
+    100144: New - Modular Floor079
+    100146: New - Modular Floor080
+    100148: New - Modular Floor081
+    100150: New - Modular Floor082
+    100152: New - Modular Floor083
+    100154: New - Modular Floor084
+    100156: New - Modular Floor085
+    100158: New - Modular Floor086
+    100160: New - Modular Floor087
+    100162: New - Modular Floor088
+    100164: New - Modular Floor089
+    100166: New - Modular Floor090
+    100168: New - Modular Floor091
+    100170: New - Modular Floor092
+    100172: New - Modular Gate004
+    100174: New - Modular Gate005
+    100176: New - Modular Gate006
+    100178: New - Modular Gate007
+    100180: New - Modular Wall
+    100182: New - Modular Wall001
+    100184: New - Modular Wall002
+    100186: New - Modular Wall003
+    100188: New - Modular Wall004
+    100190: New - Modular Wall005
+    100192: New - Modular Wall006
+    100194: New - Modular Wall007
+    100196: New - Modular Wall008
+    100198: New - Modular Wall009
+    100200: New - Modular Wall010
+    100202: New - Modular Wall011
+    100204: New - Modular Wall012
+    100206: New - Modular Wall013
+    100208: New - Modular Wall014
+    100210: New - Modular Wall015
+    100212: New - Modular Wall016
+    100214: New - Modular Wall017
+    100216: New - Modular Wall018
+    100218: New - Modular Wall019
+    100220: New - Modular Wall020
+    100222: New - Modular Wall021
+    100224: New - Modular Wall022
+    100226: New - Modular Wall023
+    400000: //RootNode
+    400002: New - Modular Corner Wall005
+    400004: New - Modular Corner Wall006
+    400006: New - Modular Corner Wall007
+    400008: New - Modular Corner Wall008
+    400010: New - Modular Floor012
+    400012: New - Modular Floor013
+    400014: New - Modular Floor014
+    400016: New - Modular Floor015
+    400018: New - Modular Floor016
+    400020: New - Modular Floor017
+    400022: New - Modular Floor018
+    400024: New - Modular Floor019
+    400026: New - Modular Floor020
+    400028: New - Modular Floor021
+    400030: New - Modular Floor022
+    400032: New - Modular Floor023
+    400034: New - Modular Floor024
+    400036: New - Modular Floor025
+    400038: New - Modular Floor026
+    400040: New - Modular Floor027
+    400042: New - Modular Floor028
+    400044: New - Modular Floor029
+    400046: New - Modular Floor030
+    400048: New - Modular Floor031
+    400050: New - Modular Floor032
+    400052: New - Modular Floor033
+    400054: New - Modular Floor034
+    400056: New - Modular Floor035
+    400058: New - Modular Floor036
+    400060: New - Modular Floor037
+    400062: New - Modular Floor038
+    400064: New - Modular Floor039
+    400066: New - Modular Floor040
+    400068: New - Modular Floor041
+    400070: New - Modular Floor042
+    400072: New - Modular Floor043
+    400074: New - Modular Floor044
+    400076: New - Modular Floor045
+    400078: New - Modular Floor046
+    400080: New - Modular Floor047
+    400082: New - Modular Floor048
+    400084: New - Modular Floor049
+    400086: New - Modular Floor050
+    400088: New - Modular Floor051
+    400090: New - Modular Floor052
+    400092: New - Modular Floor053
+    400094: New - Modular Floor054
+    400096: New - Modular Floor055
+    400098: New - Modular Floor056
+    400100: New - Modular Floor057
+    400102: New - Modular Floor058
+    400104: New - Modular Floor059
+    400106: New - Modular Floor060
+    400108: New - Modular Floor061
+    400110: New - Modular Floor062
+    400112: New - Modular Floor063
+    400114: New - Modular Floor064
+    400116: New - Modular Floor065
+    400118: New - Modular Floor066
+    400120: New - Modular Floor067
+    400122: New - Modular Floor068
+    400124: New - Modular Floor069
+    400126: New - Modular Floor070
+    400128: New - Modular Floor071
+    400130: New - Modular Floor072
+    400132: New - Modular Floor073
+    400134: New - Modular Floor074
+    400136: New - Modular Floor075
+    400138: New - Modular Floor076
+    400140: New - Modular Floor077
+    400142: New - Modular Floor078
+    400144: New - Modular Floor079
+    400146: New - Modular Floor080
+    400148: New - Modular Floor081
+    400150: New - Modular Floor082
+    400152: New - Modular Floor083
+    400154: New - Modular Floor084
+    400156: New - Modular Floor085
+    400158: New - Modular Floor086
+    400160: New - Modular Floor087
+    400162: New - Modular Floor088
+    400164: New - Modular Floor089
+    400166: New - Modular Floor090
+    400168: New - Modular Floor091
+    400170: New - Modular Floor092
+    400172: New - Modular Gate004
+    400174: New - Modular Gate005
+    400176: New - Modular Gate006
+    400178: New - Modular Gate007
+    400180: New - Modular Wall
+    400182: New - Modular Wall001
+    400184: New - Modular Wall002
+    400186: New - Modular Wall003
+    400188: New - Modular Wall004
+    400190: New - Modular Wall005
+    400192: New - Modular Wall006
+    400194: New - Modular Wall007
+    400196: New - Modular Wall008
+    400198: New - Modular Wall009
+    400200: New - Modular Wall010
+    400202: New - Modular Wall011
+    400204: New - Modular Wall012
+    400206: New - Modular Wall013
+    400208: New - Modular Wall014
+    400210: New - Modular Wall015
+    400212: New - Modular Wall016
+    400214: New - Modular Wall017
+    400216: New - Modular Wall018
+    400218: New - Modular Wall019
+    400220: New - Modular Wall020
+    400222: New - Modular Wall021
+    400224: New - Modular Wall022
+    400226: New - Modular Wall023
+    2300000: New - Modular Corner Wall005
+    2300002: New - Modular Corner Wall006
+    2300004: New - Modular Corner Wall007
+    2300006: New - Modular Corner Wall008
+    2300008: New - Modular Floor012
+    2300010: New - Modular Floor013
+    2300012: New - Modular Floor014
+    2300014: New - Modular Floor015
+    2300016: New - Modular Floor016
+    2300018: New - Modular Floor017
+    2300020: New - Modular Floor018
+    2300022: New - Modular Floor019
+    2300024: New - Modular Floor020
+    2300026: New - Modular Floor021
+    2300028: New - Modular Floor022
+    2300030: New - Modular Floor023
+    2300032: New - Modular Floor024
+    2300034: New - Modular Floor025
+    2300036: New - Modular Floor026
+    2300038: New - Modular Floor027
+    2300040: New - Modular Floor028
+    2300042: New - Modular Floor029
+    2300044: New - Modular Floor030
+    2300046: New - Modular Floor031
+    2300048: New - Modular Floor032
+    2300050: New - Modular Floor033
+    2300052: New - Modular Floor034
+    2300054: New - Modular Floor035
+    2300056: New - Modular Floor036
+    2300058: New - Modular Floor037
+    2300060: New - Modular Floor038
+    2300062: New - Modular Floor039
+    2300064: New - Modular Floor040
+    2300066: New - Modular Floor041
+    2300068: New - Modular Floor042
+    2300070: New - Modular Floor043
+    2300072: New - Modular Floor044
+    2300074: New - Modular Floor045
+    2300076: New - Modular Floor046
+    2300078: New - Modular Floor047
+    2300080: New - Modular Floor048
+    2300082: New - Modular Floor049
+    2300084: New - Modular Floor050
+    2300086: New - Modular Floor051
+    2300088: New - Modular Floor052
+    2300090: New - Modular Floor053
+    2300092: New - Modular Floor054
+    2300094: New - Modular Floor055
+    2300096: New - Modular Floor056
+    2300098: New - Modular Floor057
+    2300100: New - Modular Floor058
+    2300102: New - Modular Floor059
+    2300104: New - Modular Floor060
+    2300106: New - Modular Floor061
+    2300108: New - Modular Floor062
+    2300110: New - Modular Floor063
+    2300112: New - Modular Floor064
+    2300114: New - Modular Floor065
+    2300116: New - Modular Floor066
+    2300118: New - Modular Floor067
+    2300120: New - Modular Floor068
+    2300122: New - Modular Floor069
+    2300124: New - Modular Floor070
+    2300126: New - Modular Floor071
+    2300128: New - Modular Floor072
+    2300130: New - Modular Floor073
+    2300132: New - Modular Floor074
+    2300134: New - Modular Floor075
+    2300136: New - Modular Floor076
+    2300138: New - Modular Floor077
+    2300140: New - Modular Floor078
+    2300142: New - Modular Floor079
+    2300144: New - Modular Floor080
+    2300146: New - Modular Floor081
+    2300148: New - Modular Floor082
+    2300150: New - Modular Floor083
+    2300152: New - Modular Floor084
+    2300154: New - Modular Floor085
+    2300156: New - Modular Floor086
+    2300158: New - Modular Floor087
+    2300160: New - Modular Floor088
+    2300162: New - Modular Floor089
+    2300164: New - Modular Floor090
+    2300166: New - Modular Floor091
+    2300168: New - Modular Floor092
+    2300170: New - Modular Gate004
+    2300172: New - Modular Gate005
+    2300174: New - Modular Gate006
+    2300176: New - Modular Gate007
+    2300178: New - Modular Wall
+    2300180: New - Modular Wall001
+    2300182: New - Modular Wall002
+    2300184: New - Modular Wall003
+    2300186: New - Modular Wall004
+    2300188: New - Modular Wall005
+    2300190: New - Modular Wall006
+    2300192: New - Modular Wall007
+    2300194: New - Modular Wall008
+    2300196: New - Modular Wall009
+    2300198: New - Modular Wall010
+    2300200: New - Modular Wall011
+    2300202: New - Modular Wall012
+    2300204: New - Modular Wall013
+    2300206: New - Modular Wall014
+    2300208: New - Modular Wall015
+    2300210: New - Modular Wall016
+    2300212: New - Modular Wall017
+    2300214: New - Modular Wall018
+    2300216: New - Modular Wall019
+    2300218: New - Modular Wall020
+    2300220: New - Modular Wall021
+    2300222: New - Modular Wall022
+    2300224: New - Modular Wall023
+    3300000: New - Modular Corner Wall005
+    3300002: New - Modular Corner Wall006
+    3300004: New - Modular Corner Wall007
+    3300006: New - Modular Corner Wall008
+    3300008: New - Modular Floor012
+    3300010: New - Modular Floor013
+    3300012: New - Modular Floor014
+    3300014: New - Modular Floor015
+    3300016: New - Modular Floor016
+    3300018: New - Modular Floor017
+    3300020: New - Modular Floor018
+    3300022: New - Modular Floor019
+    3300024: New - Modular Floor020
+    3300026: New - Modular Floor021
+    3300028: New - Modular Floor022
+    3300030: New - Modular Floor023
+    3300032: New - Modular Floor024
+    3300034: New - Modular Floor025
+    3300036: New - Modular Floor026
+    3300038: New - Modular Floor027
+    3300040: New - Modular Floor028
+    3300042: New - Modular Floor029
+    3300044: New - Modular Floor030
+    3300046: New - Modular Floor031
+    3300048: New - Modular Floor032
+    3300050: New - Modular Floor033
+    3300052: New - Modular Floor034
+    3300054: New - Modular Floor035
+    3300056: New - Modular Floor036
+    3300058: New - Modular Floor037
+    3300060: New - Modular Floor038
+    3300062: New - Modular Floor039
+    3300064: New - Modular Floor040
+    3300066: New - Modular Floor041
+    3300068: New - Modular Floor042
+    3300070: New - Modular Floor043
+    3300072: New - Modular Floor044
+    3300074: New - Modular Floor045
+    3300076: New - Modular Floor046
+    3300078: New - Modular Floor047
+    3300080: New - Modular Floor048
+    3300082: New - Modular Floor049
+    3300084: New - Modular Floor050
+    3300086: New - Modular Floor051
+    3300088: New - Modular Floor052
+    3300090: New - Modular Floor053
+    3300092: New - Modular Floor054
+    3300094: New - Modular Floor055
+    3300096: New - Modular Floor056
+    3300098: New - Modular Floor057
+    3300100: New - Modular Floor058
+    3300102: New - Modular Floor059
+    3300104: New - Modular Floor060
+    3300106: New - Modular Floor061
+    3300108: New - Modular Floor062
+    3300110: New - Modular Floor063
+    3300112: New - Modular Floor064
+    3300114: New - Modular Floor065
+    3300116: New - Modular Floor066
+    3300118: New - Modular Floor067
+    3300120: New - Modular Floor068
+    3300122: New - Modular Floor069
+    3300124: New - Modular Floor070
+    3300126: New - Modular Floor071
+    3300128: New - Modular Floor072
+    3300130: New - Modular Floor073
+    3300132: New - Modular Floor074
+    3300134: New - Modular Floor075
+    3300136: New - Modular Floor076
+    3300138: New - Modular Floor077
+    3300140: New - Modular Floor078
+    3300142: New - Modular Floor079
+    3300144: New - Modular Floor080
+    3300146: New - Modular Floor081
+    3300148: New - Modular Floor082
+    3300150: New - Modular Floor083
+    3300152: New - Modular Floor084
+    3300154: New - Modular Floor085
+    3300156: New - Modular Floor086
+    3300158: New - Modular Floor087
+    3300160: New - Modular Floor088
+    3300162: New - Modular Floor089
+    3300164: New - Modular Floor090
+    3300166: New - Modular Floor091
+    3300168: New - Modular Floor092
+    3300170: New - Modular Gate004
+    3300172: New - Modular Gate005
+    3300174: New - Modular Gate006
+    3300176: New - Modular Gate007
+    3300178: New - Modular Wall
+    3300180: New - Modular Wall001
+    3300182: New - Modular Wall002
+    3300184: New - Modular Wall003
+    3300186: New - Modular Wall004
+    3300188: New - Modular Wall005
+    3300190: New - Modular Wall006
+    3300192: New - Modular Wall007
+    3300194: New - Modular Wall008
+    3300196: New - Modular Wall009
+    3300198: New - Modular Wall010
+    3300200: New - Modular Wall011
+    3300202: New - Modular Wall012
+    3300204: New - Modular Wall013
+    3300206: New - Modular Wall014
+    3300208: New - Modular Wall015
+    3300210: New - Modular Wall016
+    3300212: New - Modular Wall017
+    3300214: New - Modular Wall018
+    3300216: New - Modular Wall019
+    3300218: New - Modular Wall020
+    3300220: New - Modular Wall021
+    3300222: New - Modular Wall022
+    3300224: New - Modular Wall023
+    4300000: New - Modular Wall023
+    4300002: New - Modular Wall022
+    4300004: New - Modular Wall021
+    4300006: New - Modular Wall020
+    4300008: New - Modular Wall019
+    4300010: New - Modular Wall018
+    4300012: New - Modular Wall017
+    4300014: New - Modular Wall016
+    4300016: New - Modular Wall015
+    4300018: New - Modular Wall014
+    4300020: New - Modular Wall013
+    4300022: New - Modular Wall012
+    4300024: New - Modular Wall011
+    4300026: New - Modular Wall010
+    4300028: New - Modular Wall009
+    4300030: New - Modular Wall008
+    4300032: New - Modular Wall007
+    4300034: New - Modular Wall006
+    4300036: New - Modular Wall005
+    4300038: New - Modular Wall004
+    4300040: New - Modular Wall003
+    4300042: New - Modular Wall002
+    4300044: New - Modular Wall001
+    4300046: New - Modular Wall
+    4300048: New - Modular Gate007
+    4300050: New - Modular Gate006
+    4300052: New - Modular Gate005
+    4300054: New - Modular Gate004
+    4300056: New - Modular Floor092
+    4300058: New - Modular Floor091
+    4300060: New - Modular Floor090
+    4300062: New - Modular Floor089
+    4300064: New - Modular Floor088
+    4300066: New - Modular Floor087
+    4300068: New - Modular Floor086
+    4300070: New - Modular Floor085
+    4300072: New - Modular Floor084
+    4300074: New - Modular Floor083
+    4300076: New - Modular Floor082
+    4300078: New - Modular Floor081
+    4300080: New - Modular Floor080
+    4300082: New - Modular Floor079
+    4300084: New - Modular Floor078
+    4300086: New - Modular Floor077
+    4300088: New - Modular Floor076
+    4300090: New - Modular Floor075
+    4300092: New - Modular Floor074
+    4300094: New - Modular Floor073
+    4300096: New - Modular Floor072
+    4300098: New - Modular Floor071
+    4300100: New - Modular Floor070
+    4300102: New - Modular Floor069
+    4300104: New - Modular Floor068
+    4300106: New - Modular Floor067
+    4300108: New - Modular Floor066
+    4300110: New - Modular Floor065
+    4300112: New - Modular Floor064
+    4300114: New - Modular Floor063
+    4300116: New - Modular Floor062
+    4300118: New - Modular Floor061
+    4300120: New - Modular Floor060
+    4300122: New - Modular Floor059
+    4300124: New - Modular Floor058
+    4300126: New - Modular Floor057
+    4300128: New - Modular Floor056
+    4300130: New - Modular Floor055
+    4300132: New - Modular Floor054
+    4300134: New - Modular Floor053
+    4300136: New - Modular Floor052
+    4300138: New - Modular Floor051
+    4300140: New - Modular Floor050
+    4300142: New - Modular Floor049
+    4300144: New - Modular Floor048
+    4300146: New - Modular Floor047
+    4300148: New - Modular Floor046
+    4300150: New - Modular Floor045
+    4300152: New - Modular Floor044
+    4300154: New - Modular Floor043
+    4300156: New - Modular Floor042
+    4300158: New - Modular Floor041
+    4300160: New - Modular Floor040
+    4300162: New - Modular Floor039
+    4300164: New - Modular Floor038
+    4300166: New - Modular Floor037
+    4300168: New - Modular Floor036
+    4300170: New - Modular Floor035
+    4300172: New - Modular Floor034
+    4300174: New - Modular Floor033
+    4300176: New - Modular Floor032
+    4300178: New - Modular Floor031
+    4300180: New - Modular Floor030
+    4300182: New - Modular Floor029
+    4300184: New - Modular Floor028
+    4300186: New - Modular Floor027
+    4300188: New - Modular Floor026
+    4300190: New - Modular Floor025
+    4300192: New - Modular Floor024
+    4300194: New - Modular Floor023
+    4300196: New - Modular Floor022
+    4300198: New - Modular Floor021
+    4300200: New - Modular Floor020
+    4300202: New - Modular Floor019
+    4300204: New - Modular Floor018
+    4300206: New - Modular Floor017
+    4300208: New - Modular Floor016
+    4300210: New - Modular Floor015
+    4300212: New - Modular Floor014
+    4300214: New - Modular Floor013
+    4300216: New - Modular Floor012
+    4300218: New - Modular Corner Wall008
+    4300220: New - Modular Corner Wall007
+    4300222: New - Modular Corner Wall006
+    4300224: New - Modular Corner Wall005
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wyatt_Ver2_Mesh_default
+    second: {fileID: 2100000, guid: ad088dfae45cb8b4d91af10d6ab97fd7, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -53,8 +53,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2559e147ab0fb40b8c7e1fbbe882c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSources: []
   efxSource: {fileID: 0}
-  ambientSounds: {fileID: 0}
+  ambientSource: {fileID: 0}
   background: {fileID: 8300000, guid: 8404bbd2a0ac1664e865e40bfc42122c, type: 3}
   lowPitchRange: 0.95
   highPitchRange: 1.05
@@ -80,8 +81,7 @@ MonoBehaviour:
   - {fileID: 0}
   boardManager: {fileID: 1370791487216952, guid: 6f252ba0c5c15074aaa8d798cebf3b63,
     type: 2}
-  playerCreationScreen: {fileID: 223927336926186608, guid: 82ec5b36a1ed65c4d9576f5a29e236cd,
-    type: 2}
+  playerHUD: {fileID: 0}
 --- !u!114 &114868371011324888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,4 +96,4 @@ MonoBehaviour:
   CharacterModels:
   - {fileID: 1278680009278166, guid: e02d9ba746aee9a42913f252931bdfd1, type: 2}
   wand: {fileID: 1143076197002634, guid: efe682300922f8043ac0bf1976f700dc, type: 2}
-  canvas: {fileID: 0}
+  canvas: {fileID: 1930713831942830, guid: f008d7a3251b1bb46b1598ad6e0a72d1, type: 2}
