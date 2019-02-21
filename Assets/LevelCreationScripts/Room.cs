@@ -16,20 +16,14 @@ public class Room : MonoBehaviour {
 
     public bool playerInRoom { get; private set; }
 
-
+    public AudioClip[] roomSounds;
 
     public bool testExit = false;
 
+    SoundManager soundManager;
 
-    public void setPlayerInRoom(bool TF)
-    {
-        playerInRoom = TF;
-    }
 
-public void setExit(int ex)
-    {
-        exit = ex;
-    }
+
 
     BoardManager myBoard;
 
@@ -39,7 +33,7 @@ public void setExit(int ex)
         xPos = x;
         zPos = z;
         playerInRoom = false;
-
+        
         myBoard = GameObject.Find("BoardManager").GetComponent<BoardManager>();
 
         myBoard.numRooms--;
@@ -64,6 +58,8 @@ public void setExit(int ex)
     void Start() {
         //InitialiseRoom((int) transform.position.x, (int) transform.position.z);
         //exit = -1;
+        soundManager = GameManager.instance.GetComponent<SoundManager>();
+
 }
 	
 	// Update is called once per frame
@@ -73,5 +69,20 @@ public void setExit(int ex)
             OpenExit();
             testExit = false;
         }
+
+        soundManager.PlaySingle(roomSounds[0],SoundManager.Audio.SOUND_EFFECT, SoundManager.MixerGroups.PLAYER_BULLETS);
+
+
 	}
+
+    public void setPlayerInRoom(bool TF)
+    {
+        playerInRoom = TF;
+    }
+
+    public void setExit(int ex)
+    {
+        exit = ex;
+    }
+
 }
