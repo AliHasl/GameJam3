@@ -15,7 +15,9 @@ public class BoardManager : MonoBehaviour {
     public int maxCorridorLength = 0;
 
     public GameObject[] floorTiles;
-    
+
+    private GameObject newRoom;
+    private Vector3 newRoomLocation;
 
     //tempRooms used for now, to be replaced with the Rooms class laters.
     public GameObject[] tempRooms;
@@ -59,7 +61,8 @@ public class BoardManager : MonoBehaviour {
         
         tempRooms = new GameObject[numRooms];
         CreateRoomsAndCorridors(new Vector3(0,0,0));
-        
+
+        Destroy(tempRooms[tempRooms.Length - 1]);
     }
 	
 	// Update is called once per frame
@@ -87,7 +90,7 @@ public class BoardManager : MonoBehaviour {
         if (roomCount < numRooms)
         {
             int randomRoom = Random.Range(0, roomPrefabs.Length);
-            GameObject newRoom = Instantiate(roomPrefabs[randomRoom],new Vector3(0,0,0), Quaternion.identity);
+            newRoom = Instantiate(roomPrefabs[randomRoom],new Vector3(0,0,0), Quaternion.identity);
             
           
             tempRooms[roomCount] = newRoom;
@@ -118,6 +121,7 @@ public class BoardManager : MonoBehaviour {
                             else
                             {
                                 spaceMap[spaceX][spaceZ + 1] = true;
+                                spaceMap[spaceX][spaceZ + 2] = true;        //Additional block to try prevent this
                                 spaceZ++;
                                 blocked = false;
 
@@ -132,6 +136,7 @@ public class BoardManager : MonoBehaviour {
                             else
                             {
                                 spaceMap[spaceX + 1][spaceZ] = true;
+                                spaceMap[spaceX + 2][spaceZ] = true;        //Additional block to try prevent this
                                 spaceX++;
                                 blocked = false;
                             }
@@ -145,6 +150,7 @@ public class BoardManager : MonoBehaviour {
                             else
                             {
                                 spaceMap[spaceX][spaceZ - 1] = true;
+                                spaceMap[spaceX][spaceZ - 2] = true;        //Additional block to try prevent this
                                 spaceZ--;
                                 blocked = false;
                             }
@@ -158,6 +164,7 @@ public class BoardManager : MonoBehaviour {
                             else
                             {
                                 spaceMap[spaceX - 1][spaceZ] = true;
+                                spaceMap[spaceX - 2][spaceZ] = true;        //Additional block to try prevent this
                                 spaceX--;
                                 blocked = false;
                             }
@@ -185,7 +192,7 @@ public class BoardManager : MonoBehaviour {
     void CreateCorridor(Direction dir, Direction prev)
     {
         
-        Vector3 newRoomLocation = new Vector3();
+        newRoomLocation = new Vector3();
 
 
         if ((int)prev != -1)
@@ -201,7 +208,8 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, length), Quaternion.identity);
+                    GameObject newFloorTile = Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, length), Quaternion.identity);
+                newFloorTile.transform.SetParent(newRoom.transform.Find("MyCorridor"));
                     newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, length);
                 }
             previousDir = (int)Direction.SOUTH;
@@ -212,8 +220,9 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0);
+                    GameObject newFloorTile = Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0), Quaternion.identity);
+                newFloorTile.transform.SetParent(newRoom.transform.Find("MyCorridor"));
+                newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(1).transform.position + new Vector3(length, 0, 0);
                 }
             previousDir = (int)Direction.WEST;
             
@@ -223,8 +232,9 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length);
+                    GameObject newFloorTile = Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length), Quaternion.identity);
+                newFloorTile.transform.SetParent(newRoom.transform.Find("MyCorridor"));
+                newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(2).transform.position - new Vector3(0, 0, length);
                 }
             previousDir = (int)Direction.NORTH;
            
@@ -234,8 +244,9 @@ public class BoardManager : MonoBehaviour {
             {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
-                    Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0), Quaternion.identity);
-                    newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0);
+                    GameObject newFloorTile = Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0), Quaternion.identity);
+                newFloorTile.transform.SetParent(newRoom.transform.Find("MyCorridor"));
+                newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(3).transform.position - new Vector3(length, 0, 0);
                 }
             previousDir = (int)Direction.EAST;
             
