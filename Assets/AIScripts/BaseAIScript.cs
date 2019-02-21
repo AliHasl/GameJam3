@@ -32,11 +32,12 @@ public class BaseAIScript : MonoBehaviour {
     private Animator anim;
     private GameObject player;
 
-    public float Health;
+    public float Health, maxHealth;
     public Vector3 MoveToLocation;
 
     private void Awake()
     {
+        maxHealth = Health;
         gameObject.AddComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();

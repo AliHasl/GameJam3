@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 
     public void BuildCharacter(int health, float speed, string characterName, GameObject startWand)
     {
-        
+        gameObject.tag = "Player";
         anim = GetComponent<Animator>();
         transform.position = new Vector3(0, 0, 0);
         MaxHealth = health;
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour {
         {
             return;
         }
-        print(Wand.transform.parent);
+        //print(Wand.transform.parent);
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         if (anim != null)
@@ -272,6 +272,12 @@ public class PlayerController : MonoBehaviour {
         {
             print("WandHere");
         }
+    }
+
+
+    public void takeDamage()
+    {
+        CurrentHealth--;
     }
 }
 
