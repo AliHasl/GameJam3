@@ -55,7 +55,7 @@ public class PlayerCreation : MonoBehaviour {
         switch (CharacterName)
         {
             case CharacterTypes.MELLISA:
-                model = Instantiate(CharacterModels[0], new Vector3(0, -1, 0), Quaternion.identity);
+                model = Instantiate(CharacterModels[0], new Vector3(0, 1, 0), Quaternion.identity);
                 
                 model.AddComponent<PlayerController>();
                 model.GetComponent<PlayerController>().BuildCharacter(6, .08f, "Mellisa", wand);
@@ -86,7 +86,7 @@ public class PlayerCreation : MonoBehaviour {
         Destroy(canvas);
 
         GameManager.instance.SetPlayerObject();
-
+        GameManager.instance.displayHUD();
         Destroy(gameObject);
     }
 

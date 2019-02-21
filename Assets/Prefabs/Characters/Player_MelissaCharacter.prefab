@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 54785076566015280}
   m_Layer: 0
   m_Name: Player_MelissaCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -951,6 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfBullet: 0
   damage: 50
+  isEnemyWand: 0
 --- !u!114 &114314430541457368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,8 +967,7 @@ MonoBehaviour:
   lookAtObject: {fileID: 4025002036730846}
   wands:
   - {fileID: 0}
-  equippedWand: {fileID: 114812156157892104, guid: efe682300922f8043ac0bf1976f700dc,
-    type: 2}
+  equippedWand: {fileID: 0}
   currentIndex: 0
   Wand: {fileID: 1384671609859664}
   CharacterName: Mellisa
@@ -989,9 +989,11 @@ MonoBehaviour:
   WandSprite: {fileID: 0}
   firerate: 1
   particleGameObject: {fileID: 1911649532650296}
+  handParticleSystem: {fileID: 0}
   damage: 5
   maxAmmo: 102
   clipSize: 6
+  pickUp: 1
   bulletTypes: 7
   reloadtime: 6.66
 --- !u!137 &137904947007607652

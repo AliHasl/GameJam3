@@ -1,22 +1,74 @@
 fileFormatVersion: 2
-guid: cc179a82ba1940d4d98e74df51aa4316
-timeCreated: 1550613900
+guid: 4964ea5fd6118dd41bf7ff38383cd7d7
+timeCreated: 1550769487
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Mel Scale
+    100004: mixamorig:Head
+    100006: mixamorig:HeadTop_End
+    100008: mixamorig:Hips
+    100010: mixamorig:LeftArm
+    100012: mixamorig:LeftFoot
+    100014: mixamorig:LeftForeArm
+    100016: mixamorig:LeftHand
+    100018: mixamorig:LeftLeg
+    100020: mixamorig:LeftShoulder
+    100022: mixamorig:LeftToe_End
+    100024: mixamorig:LeftToeBase
+    100026: mixamorig:LeftUpLeg
+    100028: mixamorig:Neck
+    100030: mixamorig:RightArm
+    100032: mixamorig:RightFoot
+    100034: mixamorig:RightForeArm
+    100036: mixamorig:RightHand
+    100038: mixamorig:RightLeg
+    100040: mixamorig:RightShoulder
+    100042: mixamorig:RightToe_End
+    100044: mixamorig:RightToeBase
+    100046: mixamorig:RightUpLeg
+    100048: mixamorig:Spine
+    100050: mixamorig:Spine1
+    100052: mixamorig:Spine2
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Object091
+    400002: Mel Scale
+    400004: mixamorig:Head
+    400006: mixamorig:HeadTop_End
+    400008: mixamorig:Hips
+    400010: mixamorig:LeftArm
+    400012: mixamorig:LeftFoot
+    400014: mixamorig:LeftForeArm
+    400016: mixamorig:LeftHand
+    400018: mixamorig:LeftLeg
+    400020: mixamorig:LeftShoulder
+    400022: mixamorig:LeftToe_End
+    400024: mixamorig:LeftToeBase
+    400026: mixamorig:LeftUpLeg
+    400028: mixamorig:Neck
+    400030: mixamorig:RightArm
+    400032: mixamorig:RightFoot
+    400034: mixamorig:RightForeArm
+    400036: mixamorig:RightHand
+    400038: mixamorig:RightLeg
+    400040: mixamorig:RightShoulder
+    400042: mixamorig:RightToe_End
+    400044: mixamorig:RightToeBase
+    400046: mixamorig:RightUpLeg
+    400048: mixamorig:Spine
+    400050: mixamorig:Spine1
+    400052: mixamorig:Spine2
+    4300000: Mel Scale
+    7400000: Take 001
     9500000: //RootNode
+    13700000: Mel Scale
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 8f8661451dabdb648a189229ed68c546, type: 2}
+      name: 'Material #697'
+    second: {fileID: 2100000, guid: a54e1bfb73282154fa474c2322faa184, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
