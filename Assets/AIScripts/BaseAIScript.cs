@@ -38,7 +38,7 @@ public class BaseAIScript : MonoBehaviour {
     private void Awake()
     {
         maxHealth = Health;
-        gameObject.AddComponent<MeshCollider>();
+       // gameObject.AddComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -62,7 +62,7 @@ public class BaseAIScript : MonoBehaviour {
                 if (transform.position.x == agent.destination.x && agent.destination.z == MoveToLocation.z || agent.velocity.magnitude == 0)
                 {
                     print("inside");
-                    MoveToLocation = RandomNavmeshLocation(4f);
+                    MoveToLocation = RandomNavmeshLocation(20f);
                     agent.SetDestination(MoveToLocation);
                 }              
                 break;
