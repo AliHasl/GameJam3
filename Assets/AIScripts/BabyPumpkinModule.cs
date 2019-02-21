@@ -48,7 +48,7 @@ public class BabyPumpkinModule : MonoBehaviour {
                 bull.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * 300);
 
             }
-            print("Shooting");
+            Destroy(gameObject);
         }
         timer -= Time.deltaTime;
     }
