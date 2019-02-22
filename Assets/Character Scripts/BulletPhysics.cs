@@ -147,6 +147,9 @@ public class BulletPhysics : MonoBehaviour {
                         break;
                     case WandStats.BulletTypes.RANDOM:
                         break;
+                    case WandStats.BulletTypes.NORMAL:
+                        other.gameObject.GetComponent<BaseAIScript>().Health -= damage;
+                        break;
                 }
             }
         }
