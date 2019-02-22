@@ -13,6 +13,7 @@ TagManager:
   - Room
   - Chest
   - Bullet
+  - Wall
   layers:
   - Default
   - TransparentFX

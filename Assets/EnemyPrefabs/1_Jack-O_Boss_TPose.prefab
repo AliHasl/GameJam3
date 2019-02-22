@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1832277150276422, guid: 131188d0780e89848ae186f4a2d122a7, type: 2}
-  mineEnemy: {fileID: 1015867726809406, guid: 28f790fb7163a43418a15dd5828cb83f, type: 2}
+  mineEnemy: {fileID: 1881994522131152, guid: e27e3b39025f4074182e6418be2a95e6, type: 2}
   test: 0
 --- !u!137 &137575255338354394
 SkinnedMeshRenderer:

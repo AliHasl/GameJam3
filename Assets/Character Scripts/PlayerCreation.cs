@@ -59,7 +59,7 @@ public class PlayerCreation : MonoBehaviour {
                 model = Instantiate(CharacterModels[0], new Vector3(0, 1, 0), Quaternion.identity);
                 
                 model.AddComponent<PlayerController>();
-                model.GetComponent<PlayerController>().BuildCharacter(6, .08f, "Mellisa", wand);
+                model.GetComponent<PlayerController>().BuildCharacter(6, .8f, "Mellisa", wand);
                 print("ive built");
                 
                 break;

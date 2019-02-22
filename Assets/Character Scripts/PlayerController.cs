@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour {
         {
            // anim.SetBool("IsRunning", false);
 
-            anim.SetBool("IsDodging", true);
+            anim.SetBool("IsRolling", true);
             invinceFrames = 1.25f;
             holdDirection = lookDirection;
             holdLookDirection = lookAtObject.position;
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (invinceFrames < .4f)
         {
-            anim.SetBool("IsDodging", false);
+            anim.SetBool("IsRolling", false);
         }
 
         if (invinceFrames - .3f > 0)

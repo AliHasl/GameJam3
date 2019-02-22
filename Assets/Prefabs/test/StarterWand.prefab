@@ -107,11 +107,11 @@ MonoBehaviour:
   particleGameObject: {fileID: 1423921046632002, guid: d60d608ac83e6ae42b5de016405a9611,
     type: 2}
   handParticleSystem: {fileID: 1683132332701996}
-  damage: 5
+  damage: 50
   maxAmmo: 102
   clipSize: 6
   pickUp: 0
-  bulletTypes: 0
+  bulletTypes: 7
   reloadtime: 6.66
 --- !u!114 &114823433489101738
 MonoBehaviour:
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfBullet: 0
   damage: 50
+  isEnemyWand: 0
 --- !u!135 &135607911577069878
 SphereCollider:
   m_ObjectHideFlags: 1
