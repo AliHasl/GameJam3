@@ -20,7 +20,8 @@ public class PlayerCreation : MonoBehaviour {
     {
         MELLISA,
         BRAD,
-        WYATT
+        WYATT,
+        LACHLAN
     };
 
 
@@ -87,6 +88,8 @@ public class PlayerCreation : MonoBehaviour {
 
         GameManager.instance.SetPlayerObject();
         GameManager.instance.displayHUD();
+        Camera.main.transform.Find("UICanvas").GetComponent<UIBehaviour>().SetCharacterPortrait(CharacterName);
+        Camera.main.transform.Find("UICanvas").GetComponent<UIBehaviour>().setMaxHealth(2);
         Destroy(gameObject);
     }
 

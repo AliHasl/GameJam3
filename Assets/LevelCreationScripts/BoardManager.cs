@@ -68,7 +68,7 @@ public class BoardManager : MonoBehaviour {
         roomList.AddRange(tempRooms);
 
         //Instantiate the BOSS ROOM
-        GameObject bossRoom = Instantiate(roomPrefabs[1]);
+        GameObject bossRoom = Instantiate(roomPrefabs[2]);
         Vector3 roomOffset = bossRoom.transform.position + bossRoom.transform.Find("Exits").GetChild((int)previousDir).transform.position;
         bossRoom.transform.position = newRoomLocation - roomOffset;
         bossRoom.name = "BossRoom";
@@ -99,7 +99,7 @@ public class BoardManager : MonoBehaviour {
 
         if (roomCount < numRooms)
         {
-            int randomRoom = Random.Range(0, roomPrefabs.Length);
+            int randomRoom = Random.Range(0, roomPrefabs.Length - 1);           //Leave the large room for the boss encounter
             newRoom = Instantiate(roomPrefabs[randomRoom],new Vector3(0,0,0), Quaternion.identity);
             
           
@@ -219,6 +219,7 @@ public class BoardManager : MonoBehaviour {
                 for (int length = 0; length < corridorLength.Random; length++)
                 {
                     GameObject newFloorTile = Instantiate(floorTiles[0], tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, corridorZSize * length), Quaternion.Euler(-90, 0, 0));
+                    
                 newFloorTile.transform.SetParent(newRoom.transform.Find("MyCorridor"));
                     newRoomLocation = tempRooms[roomCount].transform.Find("Exits").GetChild(0).transform.position + new Vector3(0, 0, corridorZSize * length);
                 }

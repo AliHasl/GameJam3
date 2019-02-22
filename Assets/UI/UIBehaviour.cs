@@ -7,11 +7,14 @@ public class UIBehaviour : MonoBehaviour {
 
     public GameObject heartPrefab;
     List<GameObject> heartDisplay;
+    public GameObject manaBar, portrait;
     private int healthIndex = 0;
     [SerializeField]
     private int currentHealth = 0;
     public bool testAdd = false;
     public bool testDecreaseHealth = false;
+    public Image[] characters;
+    PlayerCreation.CharacterTypes CHARACTERS;
 
     private void testAddHeart()
     {
@@ -19,6 +22,28 @@ public class UIBehaviour : MonoBehaviour {
         {
             addHeart();
             testAdd = false;
+        }
+    }
+
+    public void SetCharacterPortrait(PlayerCreation.CharacterTypes player)
+    {
+        switch (player)
+        {
+            case PlayerCreation.CharacterTypes.MELLISA:
+                Image temp = Instantiate(characters[0]);
+                temp.transform.SetParent(transform.Find("portraitImage"));
+                
+                break;
+                
+            case PlayerCreation.CharacterTypes.WYATT:
+                Image temp1 = Instantiate(characters[1]);
+                temp1.transform.SetParent(transform.Find("portraitImage"));
+                
+                break;
+            case PlayerCreation.CharacterTypes.LACHLAN:
+                Image temp2 = Instantiate(characters[2]);
+                temp2.transform.SetParent(transform.Find("portraitImage"));
+                break;
         }
     }
 
@@ -32,9 +57,15 @@ public class UIBehaviour : MonoBehaviour {
         }
     }
 
+    public void setManaAmount(float amount)
+    {
+        manaBar.GetComponent<Image>().fillAmount = amount / 2;
+    }
+
 	// Use this for initialization
 	void Start () {
         heartDisplay = new List<GameObject>();
+        
 	}
 	
 	// Update is called once per frame
@@ -107,7 +138,10 @@ public class UIBehaviour : MonoBehaviour {
     {
         //heartDisplay[0].transform.GetChild(2).GetComponent<Image>().enabled = false;        //Disables the full heart
         //heartDisplay[0].transform.GetChild(1).GetComponent<Image>().enabled = false;        //Disables the half heart
-
+        if(heartDisplay.Count == 0)
+        {
+            return;
+        }
         foreach(GameObject hrt in heartDisplay)
         {
             hrt.transform.GetChild(1).GetComponent<Image>().enabled = false;

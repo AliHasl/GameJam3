@@ -5387,7 +5387,7 @@ MonoBehaviour:
   width: 5
   length: 5
   prefab:
-  - {fileID: 1735072739487376, guid: e59e5b4194d70fb49aa09e96a2c64274, type: 2}
+  - {fileID: 1280707885924018, guid: 4d0cb45d4593ddc4bbf1faa060e7ef6e, type: 2}
   minObjects: 1
   maxObjects: 4
   SpawnLocations:
