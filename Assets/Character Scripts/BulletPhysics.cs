@@ -106,7 +106,7 @@ public class BulletPhysics : MonoBehaviour {
                             //Instaniate explosion particle
                             if (Enemy.gameObject.GetComponent<BaseAIScript>() != null)
                             {
-                                //TakeDamage
+                                Enemy.gameObject.GetComponent<BaseAIScript>().Health -= damage;
                                 Destroy(gameObject);
                             }
                         }
@@ -128,6 +128,22 @@ public class BulletPhysics : MonoBehaviour {
                         other.gameObject.GetComponent<Rigidbody>().AddForce((other.transform.position - transform.position).normalized * damage);
                         break;
                     case WandStats.BulletTypes.POISEN:
+                        break;
+                    case WandStats.BulletTypes.ARCANE:
+                        other.gameObject.GetComponent<BaseAIScript>().Health -= damage;
+                        Collider[] colHit = createSphere(damage / 2);
+                        foreach (Collider Enemy in colHit)
+                        {
+                            //Instaniate explosion particle
+                            if (Enemy.gameObject.GetComponent<BaseAIScript>() != null)
+                            {
+                                print("working");
+                                print(Enemy.gameObject.transform.position - other.gameObject.transform.position);
+                                Enemy.gameObject.GetComponent<Rigidbody>().AddForce((other.gameObject.transform.position - Enemy.gameObject.transform.position).normalized * damage/10);
+                                
+                            }
+                        }
+                        Destroy(gameObject);
                         break;
                     case WandStats.BulletTypes.RANDOM:
                         break;

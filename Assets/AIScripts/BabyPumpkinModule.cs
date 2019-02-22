@@ -32,6 +32,8 @@ public class BabyPumpkinModule : MonoBehaviour {
 
     private void Update()
     {
+
+        transform.eulerAngles = new Vector3(-90, 0, 0);
         if(timer < 0)
         {
             baseAIScript.states = BaseAIScript.States.FIND_PLAYER;
@@ -39,6 +41,7 @@ public class BabyPumpkinModule : MonoBehaviour {
         }
         if(timer < -3)
         {
+            transform.eulerAngles = new Vector3(0, 0, 0);
             for (float i = 0; i < 1; i += .1f)
             {
                 Quaternion qua = new Quaternion(0, i * 360, 0, 0);

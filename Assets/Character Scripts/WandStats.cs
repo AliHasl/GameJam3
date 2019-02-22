@@ -45,6 +45,7 @@ public class WandStats : MonoBehaviour {
         WIND,      //KnockBack
         POISEN,    //DOT
         RANDOM,    //Random
+        ARCANE,    //Gravite bullets
         NORMAL     //Normal bullet
     };
 
@@ -91,6 +92,9 @@ public class WandStats : MonoBehaviour {
                     break;
                 case BulletTypes.POISEN:
                     bull.GetComponent<BulletPhysics>().typeOfBullet = BulletTypes.POISEN;
+                    break;
+                case BulletTypes.ARCANE:
+                    bull.GetComponent<BulletPhysics>().typeOfBullet = BulletTypes.ARCANE;
                     break;
                 case BulletTypes.RANDOM:
                     bull.GetComponent<BulletPhysics>().typeOfBullet = BulletTypes.RANDOM;
