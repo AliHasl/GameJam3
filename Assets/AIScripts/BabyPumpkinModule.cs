@@ -23,6 +23,7 @@ public class BabyPumpkinModule : MonoBehaviour {
     {
         baseAIScript = GetComponent<BaseAIScript>();
         baseAIScript.states = BaseAIScript.States.MOVE_AI_NAVMESH;
+        transform.position = baseAIScript.MoveToLocation;
 
     }
 

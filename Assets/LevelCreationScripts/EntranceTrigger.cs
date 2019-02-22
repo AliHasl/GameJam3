@@ -6,6 +6,7 @@ public class EntranceTrigger : MonoBehaviour {
 
     bool playerInRoom = false;
     GateMechanism[] roomGates;
+    [SerializeField]
     Room thisRoom;
 
 

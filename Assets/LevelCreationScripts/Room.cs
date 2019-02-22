@@ -70,6 +70,9 @@ public class Room : MonoBehaviour {
             testExit = false;
         }
 
+
+        
+
         soundManager.PlaySingle(roomSounds[0],SoundManager.Audio.SOUND_EFFECT, SoundManager.MixerGroups.PLAYER_BULLETS);
 
 

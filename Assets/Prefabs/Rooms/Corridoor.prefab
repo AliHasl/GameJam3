@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 64462960835551538}
   m_Layer: 0
   m_Name: New - Modular Floor127
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4342116039589422}
   m_Layer: 0
   m_Name: Corridoor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

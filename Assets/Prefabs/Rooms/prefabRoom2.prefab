@@ -613,8 +613,6 @@ GameObject:
   - component: {fileID: 64448896771979510}
   - component: {fileID: 23835732905523850}
   - component: {fileID: 114865397962693646}
-  - component: {fileID: 65089239222984206}
-  - component: {fileID: 64565241797224374}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Room
@@ -4790,7 +4788,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -4836,20 +4834,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: dd9f7219033a62a489adf8819e582d45, type: 3}
---- !u!64 &64565241797224374
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504714890580960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64572458683483360
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -5167,18 +5151,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65089239222984206
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504714890580960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 10, y: 0.1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65467278330396636
 BoxCollider:
@@ -5529,7 +5501,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5f81b95f4cfafe043baac08dd45e9532, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a223c43f4e3ea8f4bb4e165317765a61, type: 2}
 --- !u!114 &114891240672489952
 MonoBehaviour:
   m_ObjectHideFlags: 1

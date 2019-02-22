@@ -117,7 +117,7 @@ MonoBehaviour:
   playerLocation: {x: 0, y: 0, z: 0}
   speed: 1
   maxSpeed: 0
-  Health: 0
+  Health: 50
   maxHealth: 0
   MoveToLocation: {x: 0, y: 0, z: 0}
   states: 0
@@ -139,7 +139,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881994522131152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 13.635785
   m_Speed: 3.5

@@ -276,7 +276,7 @@ public class PlayerController : MonoBehaviour {
 
         if(other.gameObject.tag == "Enemy" && invinceFrames != 0)
         {
-            if(other.gameObject.GetComponent<BaseAIScript>().Health == other.gameObject.GetComponent<BaseAIScript>().maxHealth / 10)
+            if(other.gameObject.GetComponent<BaseAIScript>().Health < other.gameObject.GetComponent<BaseAIScript>().maxHealth / 10)
             {
                 Destroy(other.gameObject);
                 manaPool++;

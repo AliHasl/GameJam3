@@ -17,6 +17,7 @@ public class PrefabScatter : MonoBehaviour {
 
     public Transform[] SpawnLocations;
 
+   
 
 
     // Use this for initialization
@@ -40,15 +41,26 @@ public class PrefabScatter : MonoBehaviour {
                 numberToAdd = Random.Range(0, 9);
             }
             uniqueSpawnPoints.Add(numberToAdd);
+            
         }
 
+     
 
         foreach (int i in uniqueSpawnPoints)
         {
-            GameObject spawnedObject = Instantiate(prefab[0], SpawnLocations[i].position, Quaternion.identity);
+
+            int randomPrefab = Random.Range(0, prefab.Length);
+
+            GameObject spawnedObject = Instantiate(prefab[randomPrefab], SpawnLocations[i].position, Quaternion.identity);
+
+            //Instantiate(prefab[0]);
+
             if (spawnedObject.tag == "Enemy")
             {
                 spawnedObject.transform.SetParent(transform.Find("Monsters"));
+                //spawnedObject.transform.position = new Vector3(1000, 1000, 1000);
+                Debug.Log("Enemy was supposed to Spawn here: " + SpawnLocations[i].position);
+                Debug.Log("Enemy actually spawned here: " + spawnedObject.transform.position);
             }
             else
             {
@@ -62,13 +74,7 @@ public class PrefabScatter : MonoBehaviour {
 
     public virtual void Update()
     {
-        if (Application.isEditor)
-        {
-            Debug.DrawLine(transform.position + new Vector3(-width, 2, length), transform.position + new Vector3(width, 2, length));
-            Debug.DrawLine(transform.position + new Vector3(width, 2, length), transform.position + new Vector3(width, 2, -length));
-            Debug.DrawLine(transform.position + new Vector3(width, 2, -length), transform.position + new Vector3(-width, 2, -length));
-            Debug.DrawLine(transform.position + new Vector3(-width, 2, -length), transform.position + new Vector3(-width, 2, length));
-        }
+        
     }
 
 }

@@ -35,16 +35,26 @@ public class BaseAIScript : MonoBehaviour {
     public float Health, maxHealth;
     public Vector3 MoveToLocation;
 
-    private void Awake()
+    private void Start()
     {
+        print("I GOT SPAWNED HERE" + transform.position);
         maxHealth = Health;
        // gameObject.AddComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
+        agent.updatePosition = true;
+        MoveToLocation = transform.position;
+        agent.Warp(transform.position);
+        
+        
+        agent.enabled = true;
+        agent.SetDestination(MoveToLocation);
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         states = States.MOVE_AI_NAVMESH;
-        MoveToLocation = RandomNavmeshLocation(4f);
-        agent.SetDestination(MoveToLocation);
+        
+            //RandomNavmeshLocation(4f);
+        
+        
     }
 
     public States states;
@@ -62,7 +72,7 @@ public class BaseAIScript : MonoBehaviour {
                 if (transform.position.x == agent.destination.x && agent.destination.z == MoveToLocation.z || agent.velocity.magnitude == 0)
                 {
                     print("inside");
-                    MoveToLocation = RandomNavmeshLocation(20f);
+                    MoveToLocation = RandomNavmeshLocation(5f);
                     agent.SetDestination(MoveToLocation);
                 }              
                 break;
@@ -82,7 +92,13 @@ public class BaseAIScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        
+
+        if (Health < maxHealth / 10)
+        {
+            GetComponent<MeshRenderer>().material.color = Color.red;
+        }
+
+
     }
 
     public void slowDown(float amount)
@@ -98,6 +114,7 @@ public class BaseAIScript : MonoBehaviour {
      * */
     public Vector3 RandomNavmeshLocation(float radius)
     {
+        
         Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
         NavMeshHit hit;

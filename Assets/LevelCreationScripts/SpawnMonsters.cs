@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SpawnMonsters : PrefabScatter {
 
+    [SerializeField]
     private Room thisRoom;
     private bool monstersSpawned = false;
 
 	// Use this for initialization
 	public override void Start () {
         base.Start();
-        thisRoom = GetComponent<Room>();
+        thisRoom = transform.GetComponent<Room>();
 	}
 	
 	// Update is called once per frame
@@ -19,8 +20,9 @@ public class SpawnMonsters : PrefabScatter {
 
         if (monstersSpawned)
         {
-            if(thisRoom.transform.Find("Monsters").childCount == 0)
+            if(transform.Find("Monsters").childCount == 0)
             {
+                Debug.Log("childCount = " + transform.Find("Monsters").childCount);
                 thisRoom.OpenExit();
             }
         }
